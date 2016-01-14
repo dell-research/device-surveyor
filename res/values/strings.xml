@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Device Surveyor</string>
+
+    <string name="submit_button">Submit...</string>
+    <string name="confirm_title">Submit device info to server?</string>
+    <string name="confirm_message">Press "Yes" to indicate that you have reviewed your data and are willing to share it in this study. If you are not willing to share your data, please press "No" to withdraw from the study.</string>
+    <string name="confirm_yes">Yes</string>
+    <string name="confirm_no">No</string>
+
+    <string name="result_title_error">Error...</string>
+    <string name="result_title_success">Successfully submitted!</string>
+    <string name="result_message_success">You will now be redirected to the manual user survey.</string>
+
+    <string name="default_collector_address">https://pan.soft.carleton.ca/surveypost/</string>
+    <string name="default_survey_address">http://mvp.soft.carleton.ca/limesurvey2016/index.php/56997?lang=en</string>
+</resources>

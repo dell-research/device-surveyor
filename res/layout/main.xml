@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView" android:layout_gravity="top" android:layout_weight="0.80">
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World, DeviceSurveyor"
+                android:id="@+id/textDisplay"/>
+    </ScrollView>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_button"
+            android:id="@+id/submitButton" android:layout_gravity="center_horizontal|bottom"
+            android:onClick="submitOnClick"/>
+</LinearLayout>
+
