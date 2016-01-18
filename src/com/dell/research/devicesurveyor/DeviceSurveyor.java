@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,7 +12,7 @@ import org.json.JSONObject;
 import java.util.Map;
 
 public class DeviceSurveyor extends Activity {
-    private String lastSubmitAddress = "";
+    private String submitAddress = "";
     private String surveyAddress = "";
 
     /**
@@ -27,7 +26,7 @@ public class DeviceSurveyor extends Activity {
         DeviceInfo.init(this);
         String report = DeviceInfo.getSummary();
 
-        lastSubmitAddress = getResources().getString(R.string.default_collector_address);
+        submitAddress = getResources().getString(R.string.default_collector_address);
         surveyAddress = getResources().getString(R.string.default_survey_address) + "&randid=" + DeviceInfo.getRandomID();
 
         final TextView textDisplay = (TextView)findViewById(R.id.textDisplay);
@@ -46,18 +45,17 @@ public class DeviceSurveyor extends Activity {
         dialog.setCancelable(false);
 
         // Field pointing to the collection address
-        final EditText input = new EditText(this);
-        input.setSingleLine();
-        input.setText(lastSubmitAddress);
-        dialog.setView(input);
+//        final EditText input = new EditText(this);
+//        input.setSingleLine();
+//        input.setText(submitAddress);
+//        dialog.setView(input);
 
         // Submit/cancel actions
         dialog.setPositiveButton(R.string.confirm_yes, new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                lastSubmitAddress = input.getText().toString();
-                submitToServer(lastSubmitAddress);
+                submitToServer(submitAddress);
             }
         });
         dialog.setNegativeButton(R.string.confirm_no, new DialogInterface.OnClickListener() {
@@ -98,6 +96,6 @@ public class DeviceSurveyor extends Activity {
             }
         }
 
-        new SurveySubmission(this, lastSubmitAddress, surveyAddress).execute(address, report.toString());
+        new SurveySubmission(this, submitAddress, surveyAddress).execute(address, report.toString());
     }
 }
